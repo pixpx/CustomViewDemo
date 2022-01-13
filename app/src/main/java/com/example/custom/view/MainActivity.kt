@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -44,8 +44,8 @@ class MainActivity : AppCompatActivity() {
 
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
             val item = dataList.get(position)
-            var textView = holder.itemView as TextView
-            textView.setText(item.title)
+            var button = holder.itemView as AppCompatButton
+            button.setText(item.title)
             holder.itemView.setOnClickListener { view ->
                 if (!item.linkType.isNullOrBlank()) openActivity(item.linkType)
             }
